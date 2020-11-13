@@ -71,6 +71,15 @@ class KillAura : Module() {
             attackDelay = TimeUtils.randomClickDelay(this.get(), maxCPS.get())
         }
     }
+     //Switch
+     private val switchdelayValue = IntegerValue("SwitchDelay", 300, 1, 2000)
+     private fun runAttack ()
+     if (Timer.hasTimePassed ((switchdelayValue.get () * 1) .toLong ())) {
+     if (switchdelayValue.get ()! = 0) {
+     prevTargetEntities.add (if (aacValue.get () ) target !!. entityId else currentTarget !!. entityId)
+     Timer.reset ()
+        }
+    }
 
     private val hurtTimeValue = IntegerValue("HurtTime", 10, 0, 10)
     private val cooldownValue = FloatValue("Cooldown", 1f, 0f, 1f)
